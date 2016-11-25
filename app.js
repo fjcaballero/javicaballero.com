@@ -11,9 +11,6 @@ app.use(express.static('node_modules'));
 app.use(express.static('bower_components'));
 
 app.get('/', function (req, res) {
-	if(req.headers.host.match('javicaballero-web.herokuapp.com')){
-		res.redirect(301, 'http://javicaballero.com' + req.path);
-	}
   res.sendFile('index.html');
 });
 
