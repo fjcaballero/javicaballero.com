@@ -1,0 +1,22 @@
+{
+  "name": "javicaballero.com",
+  "version": "1.0.0",
+  "description": "My web",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjcaballero/javicaballero.com.git"
+  },
+  "author": "fjcaballero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fjcaballero/javicaballero.com/issues"
+  },
+  "homepage": "https://github.com/fjcaballero/javicaballero.com#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
