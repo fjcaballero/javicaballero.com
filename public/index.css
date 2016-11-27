@@ -8,8 +8,13 @@ html,body{
 	height: 100%;
 	width: 100%;
 }
+
+body{
+	background-image: url("images/background.jpg");
+}
+
 .content{
-	background: #e0e0e0;
+	/*background: #e0e0e0;*/
 	position: absolute;
 	top: 60px;
 	padding-top: 10px;
