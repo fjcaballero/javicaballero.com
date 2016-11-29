@@ -16,10 +16,8 @@
   ],
   "dependencies": {
     "webcomponentsjs": "^0.7.23",
-    "paper-styles": "^1.1.5",
     "iron-icon": "^1.0.12",
     "iron-icons": "^1.2.0",
-    "paper-header-panel": "^1.1.7",
     "paper-icon-button": "^1.1.4",
     "paper-toolbar": "^1.1.7",
     "paper-behaviors": "^1.0.12",
@@ -28,7 +26,6 @@
   "resolutions": {
     "iron-icon": "^1.0.12",
     "iron-icons": "^1.2.0",
-    "paper-header-panel": "^1.1.7",
     "paper-icon-button": "^1.1.4",
     "paper-toolbar": "^1.1.7"
   }

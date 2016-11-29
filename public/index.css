@@ -3,10 +3,8 @@
 @author Javier Caballero Abenza. All rights reserved.
 */
 html,body{
-	margin: 0;
-	padding: 0;
 	height: 100%;
-	width: 100%;
+	margin: 0;
 }
 
 body{
@@ -14,10 +12,6 @@ body{
 }
 
 .content{
-	/*background: #e0e0e0;*/
-	position: absolute;
-	top: 60px;
-	padding-top: 10px;
 	width: 100%;
-	height: calc(100% - 70px);
+	height: 100%;
 }
