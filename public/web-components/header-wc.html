@@ -9,6 +9,9 @@
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../paper-toolbar/paper-toolbar.html">
 
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sansita+One" />
+
 
 <dom-module id="header-wc">
 	<template>
@@ -16,20 +19,74 @@
 		<style is="custom-style">
 			
 			:host{
-				--background: #000000;
+				--background: var(--paper-grey-900);
+				--background-selected: #000000;
+				--font-color: var(--paper-grey-400);
+				--font-color-selected: #ffffff;
+				font-family: "Sansita One";
 			}
 
 			paper-toolbar.toolbar{
 				--paper-toolbar-background: var(--background);
-				--paper-toolbar-title:{
-					text-align: center;
-					margin-left: auto;
-					margin-right: auto;
-				}
+			}
+
+			paper-toolbar.toolbar::shadow #topBar{
+				padding-left: 0;
+			}
+
+			iron-icon.homeIcon{
+				margin-right: 20px;
+				color: var(--font-color);
+			}
+
+			.pageBtn{
+				height: 100%;
+				padding-left: 15px;
+				padding-right: 15px;
+				display: flex;
+				color: var(--font-color);
+				cursor: auto;
+			}
+
+			.pageBtn:hover{
+				background: var(--background-selected);
+				color: var(--font-color-selected);
+			}
+
+			.pageBtn span{
+				align-self: center;
+			}
+
+			.home{
+				font-family: Pacifico;
+				font-size: 30px;
+				padding-right: 30px;
+				overflow: hidden;
+				white-space: nowrap;
+				min-width: 188px;
+			}
+
+			.home:hover{
+				background: none;
 			}
 
 			.menuIcon{
-				margin-right: 0 !important;
+				display: none;
+			}
+
+			@media only screen and (max-device-width : 667px) {
+				.pageBtn:not(.home){
+					display: none;
+				}
+
+				.menuIcon{
+					display: inherit;
+				}
+
+				.home{
+					margin-left: auto;
+					margin-right: auto;
+				}
 			}
 
 		</style>
@@ -38,40 +95,28 @@
 
 		<!-- Navbar and search -->
 		<paper-toolbar class="toolbar">
-			<iron-icon icon="home" src="{{icon}}" id="homeIcon"></iron-icon>
-			<div class="title">Javi Caballero</div>
+			<!--iron-icon icon="home" src="{{icon}}" class="homeIcon"></iron-icon-->
 			<paper-icon-button icon="menu" class="menuIcon" on-click="_toggle"></paper-icon-button>
+			<div class="pageBtn home">Javi Caballero</div>
+			<div class="pageBtn"><span>Services</span></div>
+			<div class="pageBtn"><span>Projects</span></div>
+			<div class="pageBtn"><span>Contact</span></div>			
 		</paper-toolbar>
 	</template>
 	<script>
 		Polymer({
+
 			is: 'header-wc',
+
 			properties:{
-				
 				icon: {
 					type: String,
 					value: ""
 				},
 
-				color: {
-					type: String,
-					value: "#000000"
-				},
-
 			},
 
-			attached: function(){
-				if(this.color && this.color != "#000000"){
-					this.customStyle['--background'] = this.color;
-          this.updateStyles();
-				}
-
-				if(this.icon && this.icon!=""){
-					this.$['homeIcon'].icon="";
-				}
-			},
-
-			_toggle: function(){
+      _toggle: function(){
 				//TODO
 				window.alert('unlucky: undefined');
 			},
