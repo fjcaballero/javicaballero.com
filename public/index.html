@@ -11,24 +11,46 @@
 
 	<!-- Polyfill -->
 	<script src="webcomponentsjs/webcomponents.min.js"></script>
-
-	<link rel="icon" href="favicon.png" type="image/png"/>
-	
-
-	<link rel="import" href="paper-styles/color.html">
-
 	<!-- Web components -->
 	<link rel="import" href="web-components/header-wc.html">
-
+	<link rel="import" href="paper-styles/color.html">
+	<!-- Styles / Resources -->
+	<link rel="icon" href="favicon.png" type="image/png"/>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
-
+	<base href="/">
 </head>
-<body>
-	<header-wc color="" icon=""></header-wc>
+<body ng-app="app">
+	<header-wc></header-wc>
 	<div class="content">
 		<h1>In construction</h1>
+		<ng-view></ng-view>
 	</div>
+
+	<script>
+		var app = angular.module("app", ["ngRoute"]);
+		var viewRoot = "/views/";
+		app.config(function($routeProvider, $locationProvider) {
+		    $routeProvider
+		    .when("/", {
+		        templateUrl : viewRoot+"main.html"
+		    })
+		    .when("/services", {
+		        templateUrl : viewRoot+"services.html"
+		    })
+		    .when("/projects", {
+		        templateUrl : viewRoot+"projects.html"
+		    })
+		    .when("/contact", {
+		        templateUrl : viewRoot+"contact.html"
+		    });
+		    // use the HTML5 History API
+        $locationProvider.html5Mode(true);
+		});
+	</script>
 
 </body>
 </html>

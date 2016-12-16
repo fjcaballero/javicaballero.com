@@ -45,7 +45,8 @@
 				padding-right: 15px;
 				display: flex;
 				color: var(--font-color);
-				cursor: auto;
+				cursor: pointer;
+				text-decoration: none;
 			}
 
 			.pageBtn:hover{
@@ -97,10 +98,10 @@
 		<paper-toolbar class="toolbar">
 			<!--iron-icon icon="home" src="{{icon}}" class="homeIcon"></iron-icon-->
 			<paper-icon-button icon="menu" class="menuIcon" on-click="_toggle"></paper-icon-button>
-			<div class="pageBtn home">Javi Caballero</div>
-			<div class="pageBtn"><span>Services</span></div>
-			<div class="pageBtn"><span>Projects</span></div>
-			<div class="pageBtn"><span>Contact</span></div>			
+			<a class="pageBtn home" href="/">Javi Caballero</a>
+			<a class="pageBtn" href="/services"><span>Services</span></a>
+			<a class="pageBtn" href="/projects"><span>Projects</span></a>
+			<a class="pageBtn" href="/contact"><span>Contact</span></a>
 		</paper-toolbar>
 	</template>
 	<script>
