@@ -1,0 +1,75 @@
+<!--
+@license
+@author Javier Caballero Abenza. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icons/communication-icons.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+
+<dom-module id="contact-wc">
+	<template>
+		
+		<style is="custom-style">
+			:host{
+				display: inline-flex;
+				flex-direction: column;
+				width: 300px;
+				padding: 10px;
+			}
+			a{
+				display: inline-flex;
+				flex-direction: column;
+				text-decoration: none;
+				color: var(--paper-grey-700);
+			}
+
+			a:hover{
+				color: #000000;
+			}
+
+			a:hover iron-icon{
+				background: #000000;
+			}
+
+			iron-icon{
+				margin: auto;
+				margin-bottom: 10px;
+        min-width: 48px;
+        min-height: 48px;
+        border-radius: 48px;
+        background: var(--paper-grey-400);
+        padding: 20px;
+        fill: #ffffff;
+			}
+
+			span{
+				display: block;
+				margin: auto;
+			}
+
+			@media only screen and (max-device-width : 667px) {
+				:host{
+					display: flex;
+				}
+			}
+
+		</style>
+
+		<a href="{{href}}" target="{{target}}">
+			<iron-icon icon="{{icon}}" src="{{image}}"></iron-icon>
+			<span class="name">{{title}}</span>
+			<span>{{description}}</span>
+		</a>
+		
+
+	</template>
+	<script>
+		Polymer({
+
+			is: 'contact-wc',
+
+		});
+	</script>
+</dom-module>
