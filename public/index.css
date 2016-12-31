@@ -13,5 +13,34 @@ body{
 
 .content{
 	width: 100%;
+	height: calc(100% - 64px);
+}
+
+
+/* Contact */
+
+.contact-container{
+	display: flex;
+	flex-direction: column;
 	height: 100%;
+}
+
+.contact-info{
+	padding: 10px;
+	margin: auto;
+	align-self: center;
+	background-color: #ffffff;
+	opacity: 0.9;
+}
+
+.contact-info .title{
+	  font-size: 64px;
+    word-spacing: 1px;
+    line-height: 90px;
+    font-family: "neuzeitgrobold",sans-serif;
+    text-transform: none;
+    letter-spacing: -3px;
+    text-align: center;
+    margin: 20px;
+    color: #616161
 }
