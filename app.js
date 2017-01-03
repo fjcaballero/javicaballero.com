@@ -5,6 +5,7 @@ app.set('port', (process.env.PORT || 8080));
 
 //Public files
 app.use(express.static('public'));
+app.use(express.static('public/images'));
 //node_modules
 app.use(express.static('node_modules'));
 //node_modules
