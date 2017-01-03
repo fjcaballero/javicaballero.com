@@ -22,12 +22,12 @@ body{
 .contact-container{
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	height: 100%;
+	padding: 15px;
 }
 
 .contact-info{
-	padding: 10px;
-	margin: auto;
 	align-self: center;
 	background-color: #ffffff;
 	opacity: 0.9;
@@ -43,4 +43,10 @@ body{
     text-align: center;
     margin: 20px;
     color: #616161
+}
+
+@media only screen and (max-device-width : 667px) {
+	.contact-container, .contact-info{
+		justify-content: inherit;
+	}
 }
