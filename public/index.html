@@ -14,6 +14,8 @@
 	<!-- Web components -->
 	<link rel="import" href="web-components/header-wc.html">
 	<link rel="import" href="web-components/contact-wc.html">
+	<link rel="import" href="web-components/recipe-wc.html">
+
 	<link rel="import" href="paper-styles/color.html">
 	<!-- Styles / Resources -->
 	<link rel="icon" href="favicon.png" type="image/png"/>
@@ -46,7 +48,13 @@
 		    })
 		    .when("/contact", {
 		        templateUrl : viewRoot+"contact.html"
-		    });
+		    })
+		    .when("/recipes", {
+		        templateUrl : viewRoot+"recipes.html"
+		    })
+		    .otherwise({
+		    		redirectTo: '/'
+				});
 		    // use the HTML5 History API
         $locationProvider.html5Mode(true);
 		});
