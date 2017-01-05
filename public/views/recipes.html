@@ -1,0 +1,17 @@
+
+<template is="dom-bind" id="Recipes">
+
+	<div class="recipesContainer"> 
+		<template is="dom-repeat" items="{{files}}">
+			<recipe-wc
+				src="recipes-md/{{item}}"
+			></recipe-wc>
+		</template>
+	</div>
+
+	<script type="text/javascript">
+		Recipes.files = [ "Brownie.md" ];
+	</script>
+
+</template>
+

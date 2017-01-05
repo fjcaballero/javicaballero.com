@@ -1,0 +1,58 @@
+<!--
+@license
+@author Javier Caballero Abenza. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<!-- Showdown -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.5.5/showdown.min.js"></script>
+
+<dom-module id="recipe-wc">
+	<template>
+
+		<style is="custom-style">
+
+			:host{
+				display: flex;
+				align-self: center;
+			}
+
+			.recipe{
+				background-color: #ffffff;
+				opacity: 0.8;
+				color: var(--paper-grey-800);
+				padding: 20px;
+			}
+
+		</style>
+
+		<div class="recipe" id="targetDiv"></div>
+
+		<iron-ajax
+			auto
+      id="md_request"
+      url="{{src}}"
+      handle-as="text"
+      on-response="_md_response"
+      >
+    </iron-ajax>
+
+	</template>
+	<script>
+		Polymer({
+
+			is: 'recipe-wc',
+
+			properties:{
+			},
+
+			_md_response: function(event, detail){
+				var converter = new showdown.Converter();
+				var target = this.$.targetDiv;
+				var html = converter.makeHtml(detail.response);
+				target.innerHTML = html;
+			}
+
+		});
+	</script>
+</dom-module>
