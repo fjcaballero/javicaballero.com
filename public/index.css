@@ -3,21 +3,59 @@
 @author Javier Caballero Abenza. All rights reserved.
 */
 html,body{
-	margin: 0;
-	padding: 0;
 	height: 100%;
-	width: 100%;
+	margin: 0;
 }
 
 body{
-	background-image: url("images/background.jpg");
+	/* background-image: url("images/background.jpg");
+*/
 }
 
 .content{
-	/*background: #e0e0e0;*/
-	position: absolute;
-	top: 60px;
-	padding-top: 10px;
 	width: 100%;
-	height: calc(100% - 70px);
+	height: calc(100% - 64px);
+}
+
+
+/* Contact */
+
+.contact-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: calc(100% - 30px);
+	padding: 15px;
+}
+
+.contact-info{
+	align-self: center;
+	background-color: #ffffff;
+	opacity: 0.9;
+}
+
+.contact-info .title{
+	  font-size: 64px;
+    word-spacing: 1px;
+    line-height: 90px;
+    font-family: "neuzeitgrobold",sans-serif;
+    text-transform: none;
+    letter-spacing: -3px;
+    text-align: center;
+    margin: 20px;
+    color: #616161
+}
+
+@media only screen and (max-device-width : 667px) {
+	.contact-container, .contact-info{
+		justify-content: inherit;
+	}
+}
+
+/* Recipes */
+.recipesContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100%;
 }

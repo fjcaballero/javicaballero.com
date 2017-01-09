@@ -7,27 +7,83 @@
 <head>
 	<title>Javi Caballero</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Polyfill -->
 	<script src="webcomponentsjs/webcomponents.min.js"></script>
-
-	<link rel="icon" href="favicon.png" type="image/png"/>
-	
-
-	<link rel="import" href="paper-styles/color.html">
-
 	<!-- Web components -->
 	<link rel="import" href="web-components/header-wc.html">
+	<link rel="import" href="web-components/contact-wc.html">
+	<link rel="import" href="web-components/recipe-wc.html">
+	<link rel="import" href="web-components/lanloader-wc.html">
+	<link rel="import" href="web-components/string2html-wc.html">
 
+	<link rel="import" href="paper-styles/color.html">
+	<!-- Styles / Resources -->
+	<link rel="icon" href="favicon.png" type="image/png"/>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
-
+	<base href="/">
 </head>
-<body>
-	<header-wc color="" icon=""></header-wc>
+<body ng-app="app" ng-controller="mainCtrl">
+
+	<lanloader-wc
+		route="texts/"
+		lan="en"
+		varname="words"
+	>
+	</lanloader-wc>
+
+	<header-wc id="header-wc"
+		home="Javi Caballero"
+		tabs="{{words.services}}, {{words.projects}}, {{words.contact}}"
+	>
+	</header-wc>
+
 	<div class="content">
-		<h1>In construction</h1>
+		<ng-view></ng-view>
 	</div>
+
+	<script>
+		var app = angular.module("app", ["ngRoute"]);
+		var viewRoot = "/views/";
+		app.config(function($routeProvider, $locationProvider) {
+		    $routeProvider
+		    .when("/", {
+		        templateUrl : viewRoot+"main.html"
+		    })
+		    .when("/services", {
+		        templateUrl : viewRoot+"services.html"
+		    })
+		    .when("/projects", {
+		        templateUrl : viewRoot+"projects.html"
+		    })
+		    .when("/contact", {
+		        templateUrl : viewRoot+"contact.html"
+		    })
+		    .when("/recipes", {
+		        templateUrl : viewRoot+"recipes.html"
+		    })
+		    .otherwise({
+		    		redirectTo: '/'
+				});
+		    // use the HTML5 History API
+        $locationProvider.html5Mode(true);
+		});
+		app.controller('mainCtrl', ['$scope', function($scope){
+			app.setV = function(name, value){
+				$scope.$apply(function(){
+					$scope[name] = value;
+				});
+			}
+			app.getV = function(name){
+				return $scope[name];
+			}
+		}]);
+	</script>
 
 </body>
 </html>
