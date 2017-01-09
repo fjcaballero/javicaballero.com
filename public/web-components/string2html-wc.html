@@ -1,0 +1,30 @@
+<!--
+@license
+@author Javier Caballero Abenza. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="string2html-wc">
+	<template>
+		<p id="target"></p>
+	</template>
+	<script>
+		Polymer({
+
+			is: 'string2html-wc',
+
+			properties:{
+				string: {
+					type: String,
+					value: "",
+					observer: "copyString"
+				}
+			},
+
+			copyString: function(){
+				this.$.target.innerHTML = this.string;
+			}
+
+		});
+	</script>
+</dom-module>

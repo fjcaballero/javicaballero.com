@@ -19,15 +19,17 @@
 		<style is="custom-style">
 			
 			:host{
-				--background: var(--paper-grey-900);
-				--background-selected: #000000;
-				--font-color: var(--paper-grey-400);
-				--font-color-selected: #ffffff;
+				--background: #ffffff;
+				--background-selected: var(--paper-grey-200);
+				--font-color: var(--paper-grey-500);
+				--font-color-selected: #000000;
 				font-family: "Sansita One";
 			}
 
 			paper-toolbar.toolbar{
 				--paper-toolbar-background: var(--background);
+				border-bottom: 1px solid var(--background-selected);
+				color: var(--font-color);
 			}
 
 			paper-toolbar.toolbar::shadow #topBar{
@@ -56,6 +58,7 @@
 
 			.pageBtn span, .sideBtn span{
 				align-self: center;
+				text-transform: capitalize;
 			}
 
 			.home{
@@ -111,17 +114,17 @@
 		<!-- Navbar and search -->
 		<paper-toolbar class="toolbar">
 			<!--iron-icon icon="home" src="{{icon}}" class="homeIcon"></iron-icon-->
-			<paper-icon-button icon="menu" class="menuIcon" on-click="_toggle"></paper-icon-button>
-			<a class="pageBtn home" href="/">Javi Caballero</a>
-			<a class="pageBtn" href="/services"><span>Services</span></a>
-			<a class="pageBtn" href="/projects"><span>Projects</span></a>
-			<a class="pageBtn" href="/contact"><span>Contact</span></a>
+			<paper-icon-button icon="menu" class="menuIcon" on-tap="_toggle"></paper-icon-button>
+			<a class="pageBtn home" href="/" on-tap="none">{{home}}</a>
+			<template is="dom-repeat" items="{{tabsArray}}">
+				<a class="pageBtn" href="/{{item}}"><span>{{item}}</span></a>
+			</template>
 		</paper-toolbar>
 		
 		<div id="sidebar" class="sidebar">
-			<a class="sideBtn" href="/services" on-tap="_toggle"><span>Services</span></a>
-			<a class="sideBtn" href="/projects" on-tap="_toggle"><span>Projects</span></a>
-			<a class="sideBtn" href="/contact" on-tap="_toggle"><span>Contact</span></a>
+			<template is="dom-repeat" items="{{tabsArray}}">
+				<a class="sideBtn" href="/{{item}}" on-tap="_toggle"><span>{{item}}</span></a>
+			</template>
 		</div>
 
 	</template>
@@ -136,6 +139,22 @@
 					value: ""
 				},
 
+				tabs:{
+					type: String,
+					value: "",
+					observer: "newTabs"
+				}
+
+			},
+
+			newTabs: function(){
+				if(this.tabs){
+					var tabsArray = this.tabs.split(",");
+					for (var i = 0; i < tabsArray.length; i++) {
+						tabsArray[i] = tabsArray[i].trim();
+					}
+					this.tabsArray = tabsArray;		
+				}
 			},
 
       _toggle: function(){
@@ -147,6 +166,8 @@
           this.$['sidebar'].style.left="-50%";
         }
 			},
+
+			none: function(){/* Does nothing, but needed to fire event click */}
 
 		});
 	</script>
