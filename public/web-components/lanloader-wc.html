@@ -31,7 +31,8 @@
 
 				lan: {
 					type: String,
-					value: ""
+					value: "",
+					observer: "newLan"
 				},
 				
 				varname: {
@@ -41,12 +42,15 @@
 
 			},
 
-			attached: function(){
-				this.url = this.route + this.lan + '.json'
-				this.$.language_request.generateRequest();
+			newLan: function(){
+				if(this.route && this.lan){
+					this.url = this.route + this.lan + '.json'
+					this.$.language_request.generateRequest();
+				}
 			},
 
 			_language_response: function(event, detail){
+				console.log(this.varname);
 				var text = detail.response;
 				for(var name in text){
 					var el = text[name];
@@ -59,6 +63,7 @@
 					}
 				}
 				app.setV(this.varname, detail.response);
+				console.log(this.varname);
 			}
 
 		});

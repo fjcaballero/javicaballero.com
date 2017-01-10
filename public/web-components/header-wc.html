@@ -117,13 +117,13 @@
 			<paper-icon-button icon="menu" class="menuIcon" on-tap="_toggle"></paper-icon-button>
 			<a class="pageBtn home" href="/" on-tap="none">{{home}}</a>
 			<template is="dom-repeat" items="{{tabsArray}}">
-				<a class="pageBtn" href="/{{item}}"><span>{{item}}</span></a>
+				<a class="pageBtn" href="/{{getRef(index)}}"><span>{{item}}</span></a>
 			</template>
 		</paper-toolbar>
 		
 		<div id="sidebar" class="sidebar">
 			<template is="dom-repeat" items="{{tabsArray}}">
-				<a class="sideBtn" href="/{{item}}" on-tap="_toggle"><span>{{item}}</span></a>
+				<a class="sideBtn" href="/{{getRef(index)}}" on-tap="_toggle"><span>{{item}}</span></a>
 			</template>
 		</div>
 
@@ -143,17 +143,28 @@
 					type: String,
 					value: "",
 					observer: "newTabs"
+				},
+
+				refs:{
+					type: String,
+					value: ""
 				}
 
 			},
 
 			newTabs: function(){
-				if(this.tabs){
+				if(this.tabs && this.refs){
+					var refsArray = this.refs.split(",");
+					for (var i = 0; i < refsArray.length; i++) {
+						refsArray[i] = refsArray[i].trim();
+					}
+					this.refsArray = refsArray;	
+
 					var tabsArray = this.tabs.split(",");
 					for (var i = 0; i < tabsArray.length; i++) {
 						tabsArray[i] = tabsArray[i].trim();
 					}
-					this.tabsArray = tabsArray;		
+					this.tabsArray = tabsArray;
 				}
 			},
 
@@ -165,6 +176,10 @@
         else{
           this.$['sidebar'].style.left="-50%";
         }
+			},
+
+			getRef: function(index){
+				return this.refsArray[index];
 			},
 
 			none: function(){/* Does nothing, but needed to fire event click */}

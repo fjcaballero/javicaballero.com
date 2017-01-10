@@ -17,6 +17,10 @@
 		string="{{words.description}}" 
 	></string2html-wc>
 
+	<a class="cv" href="files/javicaballero_cv.pdf" target="_blank">
+		<iron-icon src="resume.png"></iron-icon>
+	</a>
+
 </div>
 
 <style type="text/css">
@@ -77,6 +81,19 @@
 		max-width: 80%;
 		font-size: 20px;
 		text-align: justify;
+	}
+
+	.cv{
+		align-self: center;
+	}
+
+	.cv iron-icon{
+		width: 200px;
+		height: 200px;
+	}
+
+	.cv iron-icon:hover{
+		content: url("resume-black.png");
 	}
 
 	@media only screen and (max-device-width : 667px) {
