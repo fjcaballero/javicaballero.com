@@ -1,0 +1,15 @@
+{
+	"services" : "servicios",
+	"projects" : "proyectos",
+	"contact" : "contacto",
+	"title" : "Ingeniero Informático y desarrollador Web",
+	"description": [
+		"Hola!!, soy Javi Caballero, bienvenido a mi web.",
+		"<br><br>",
+		"Si estás aqui imagino que será porque quieres conocerme mejor o ver si te puedo ayudar con tus proyectos. En la parte de abajo puedes descargar mi currículum pero si quieres conocerme un poco mejor sigue leyendo.",
+		"<br><br>",
+		"Soy un Ingeniero Informático y desarrollador Web de 23 años. Vivo en Madrid, España y me encanta programar, puedes echarle un ojo a alguno de mis proyectos en la pestaña Proyectos. Mis aficiones son el fútbol, los deportes electrónicos(eSports) y los videojuegos. También me gusta cocinar y ver buenas series como Juego de Tronos o Sherlock, y algún anime de vez en cuando.",
+		"<br>",
+		"Acabo de terminar el grado y estoy buscando proyectos en los que seguir aprendiendo. Internet es mi vida, cuando empecé a estudiar desarrollo Web me encantó y decidí dedicarme a ello aprendiendo lo máximo posible."
+	]
+}

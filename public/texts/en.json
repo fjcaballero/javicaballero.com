@@ -1,0 +1,16 @@
+{
+	"services" : "services",
+	"projects" : "projects",
+	"contact" : "contact",
+	"title" : "Computer engineer and Web developer",
+	"description" : [
+		"Hi!, I´m Javi Caballero, welcome to my page.",
+		"<br><br>",
+		"If you are here I assume you want to know me better or check if I can help you with your projects. On the bottom of the page you can download my resume but if you want some extra info keep reading.",
+		"<br><br>",
+		"I am a 23 years old computer engineer and Web developer. I live in Madrid, Spain and I like so much programming, you can check some of my projects on the Projects tab. My hobbies are soccer, electronic sports(eSports) and videogames. I also like cooking and good tv shows like Game of Thrones or Sherlock, and some anime from time to time.", 
+		"<br>",
+		"I have just finished my degree so I´m looking for some projects where keep learning. The Internet is my life, when I started learning Web development I felt in love with it and wanted to learn each and every aspect of it."
+	]
+
+}

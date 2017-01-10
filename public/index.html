@@ -15,6 +15,8 @@
 	<link rel="import" href="web-components/header-wc.html">
 	<link rel="import" href="web-components/contact-wc.html">
 	<link rel="import" href="web-components/recipe-wc.html">
+	<link rel="import" href="web-components/lanloader-wc.html">
+	<link rel="import" href="web-components/string2html-wc.html">
 
 	<link rel="import" href="paper-styles/color.html">
 	<!-- Styles / Resources -->
@@ -26,8 +28,22 @@
 
 	<base href="/">
 </head>
-<body ng-app="app">
-	<header-wc></header-wc>
+<body ng-app="app" ng-controller="mainCtrl">
+
+	<lanloader-wc
+		route="texts/"
+		lan="en"
+		varname="words"
+	>
+	</lanloader-wc>
+
+	<header-wc id="header-wc"
+		home="Javi Caballero"
+		tabs="{{words.services}}, {{words.projects}}, {{words.contact}}"
+		refs="services, projects, contact"
+	>
+	</header-wc>
+
 	<div class="content">
 		<ng-view></ng-view>
 	</div>
@@ -58,6 +74,16 @@
 		    // use the HTML5 History API
         $locationProvider.html5Mode(true);
 		});
+		app.controller('mainCtrl', ['$scope', function($scope){
+			app.setV = function(name, value){
+				$scope.$apply(function(){
+					$scope[name] = value;
+				});
+			}
+			app.getV = function(name){
+				return $scope[name];
+			}
+		}]);
 	</script>
 
 </body>

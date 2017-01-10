@@ -1,0 +1,71 @@
+<!--
+@license
+@author Javier Caballero Abenza. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="lanloader-wc">
+
+	<template>
+
+		<iron-ajax
+      id="language_request"
+      url="{{url}}"
+      on-response="_language_response"
+      >
+    </iron-ajax>
+
+	</template>
+	<script>
+		Polymer({
+
+			is: 'lanloader-wc',
+
+			properties:{
+
+				route: {
+					type: String,
+					value: ""
+				},
+
+				lan: {
+					type: String,
+					value: "",
+					observer: "newLan"
+				},
+				
+				varname: {
+					type: String,
+					value: ""
+				}
+
+			},
+
+			newLan: function(){
+				if(this.route && this.lan){
+					this.url = this.route + this.lan + '.json'
+					this.$.language_request.generateRequest();
+				}
+			},
+
+			_language_response: function(event, detail){
+				console.log(this.varname);
+				var text = detail.response;
+				for(var name in text){
+					var el = text[name];
+					if(el instanceof Array){
+						var fixed = "";
+						for (var i = 0; i < el.length; i++) {
+							fixed += el[i];
+						}
+						text[name] = fixed;
+					}
+				}
+				app.setV(this.varname, detail.response);
+				console.log(this.varname);
+			}
+
+		});
+	</script>
+</dom-module>
