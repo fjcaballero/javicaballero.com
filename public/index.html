@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Polyfill -->
-	<script src="webcomponentsjs/webcomponents.min.js"></script>
+	<script src="webcomponentsjs/webcomponents-lite.min.js"></script>
 	<!-- Web components -->
 	<link rel="import" href="web-components/header-wc.html">
 	<link rel="import" href="web-components/contact-wc.html">
@@ -76,7 +76,7 @@
 		});
 		app.controller('mainCtrl', ['$scope', function($scope){
 			app.setV = function(name, value){
-				$scope.$apply(function(){
+				$scope.$evalAsync(function(){
 					$scope[name] = value;
 				});
 			}
