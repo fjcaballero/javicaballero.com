@@ -50,7 +50,6 @@
 			},
 
 			_language_response: function(event, detail){
-				console.log(this.varname);
 				var text = detail.response;
 				for(var name in text){
 					var el = text[name];
@@ -63,7 +62,6 @@
 					}
 				}
 				app.setV(this.varname, detail.response);
-				console.log(this.varname);
 			}
 
 		});
