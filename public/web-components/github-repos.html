@@ -1,0 +1,80 @@
+<!--
+@license
+@author Javier Caballero Abenza. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<dom-module id="github-repos">
+    <template>
+
+        <style is="custom-style">
+            :host{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            a{
+                text-decoration: none;
+                color: inherit;
+                max-width: 100%;
+            }
+            .repo{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-transform: none;
+                margin-bottom: 10px;
+                background-color: var(--paper-grey-200);
+                color: var(--paper-grey-700);
+                width: 100%;
+            }
+
+            .repo:hover{
+                background-color: var(--paper-grey-800) !important;
+                color: white !important;
+            }
+
+            span{
+                font-family: "Trebuchet MS, Helvetica, sans-serif";
+                word-wrap: break-word;
+                max-width: 100%;
+            }
+
+            .name{
+                font-size: 21px;
+                margin-bottom: 5px;
+            }
+
+            .description{
+                font-style: italic;
+            }
+
+        </style>
+
+        <template is="dom-repeat" items="{{repos}}">
+            <a href="{{item.html_url}}" target="_blank">
+                <paper-button raised class="repo">
+                    <span class="name"> {{item.full_name}}</span>
+                    <span class="description">{{item.description}}</span>
+                </paper-button>
+            </a>
+        </template>
+
+        <iron-ajax
+            auto
+            url="https://api.github.com/users/{{username}}/repos?type=all"
+            last-response="{{repos}}"
+        ></iron-ajax>
+    </template>
+    <script>
+        Polymer({
+
+            is: 'github-repos',
+
+            properties:{
+            },
+
+        });
+    </script>
+</dom-module>

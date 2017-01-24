@@ -29,13 +29,14 @@ body{
 }
 
 .contact-info{
+	max-width: 100%;
 	align-self: center;
 	background-color: #ffffff;
 	opacity: 0.9;
 }
 
 .contact-info .title{
-	  font-size: 64px;
+	font-size: 64px;
     word-spacing: 1px;
     line-height: 90px;
     font-family: "neuzeitgrobold",sans-serif;
