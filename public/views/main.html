@@ -2,112 +2,44 @@
 	
 	<div class="info">
 
-		<img class="profileImg" src="favicon.png">
+		<img class="profileImg" src="https://img.clipartfest.com/cdcde5f57bee760b49629321f929babb_men-in-suits-pictures-cliparts-clipart-man-in-suit_1500-1500.png">
 
 		<div class="vr"></div>
 
 		<div class="detail">
 			<span class="name">Javi Caballero</span>
 			<span class="title">{{words.title}}</span>
+			<a href="mailto:javier.caballero.abenza@gmail.com" target="_blank">
+				<iron-icon icon="mail"></iron-icon>
+				javier.caballero.abenza@gmail.com
+			</a>
+			<a href="http://telegram.me/fjcaballero" target="_blank">
+				<iron-icon icon="communication:phone"></iron-icon>
+				+34 625355635
+			</a>
+			<a class="githubRef" href="http://telegram.me/fjcaballero" target="_blank">
+				<iron-icon class="githubIcon" src="github-white.png"></iron-icon>
+				fjcaballero
+			</a>			
 		</div>
 
 	</div>
 
+	<div class="links">
+		<a class="linkBtn" href="/services">
+			Services
+		</a>
+		<a class="linkBtn" href="/projects">
+			Projects
+		</a>
+		<a class="linkBtn cv" href="files/javicaballero_cv.pdf" target="_blank">
+			<iron-icon src="resume.png"></iron-icon>
+		</a>
+	</div>
+
+	<!--
 	<string2html-wc class="description"
 		string="{{words.description}}" 
 	></string2html-wc>
-
-	<a class="cv" href="files/javicaballero_cv.pdf" target="_blank">
-		<iron-icon src="resume.png"></iron-icon>
-	</a>
-
+	-->
 </div>
-
-<style type="text/css">
-
-	.container{
-		display: flex;
-		flex-direction: column;
-		min-height: calc(100% - 30px);
-		padding: 15px;
-		color: #616161;
-	}
-
-	.info, .description{
-		align-self: center;
-		display: inline-flex;
-		align-items: flex-start;
-		justify-content: center;
-		flex-wrap: wrap;
-		opacity: 0.9;
-		padding: 20px;
-		background-color: rgba(255,255,255,0.7);
-	}
-
-	.profileImg{
-		width: 150px;
-		border-radius: 100px;
-	}
-
-	.vr{
-		border: 1px solid #616161;
-		min-height: 250px;
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-
-	.profileImg, .detail{
-		display: inline-flex;
-		flex-direction: column;
-		align-self: center;
-	}
-
-	.name, .title{
-		display: block;
-		margin: auto;
-		text-align: center;
-	}
-
-	.name{
-		font-size: 64px;
-	}
-
-	.title{
-		font-size: 32px;
-	}
-
-	.description{
-		margin-top: 40px;
-		max-width: 80%;
-		font-size: 20px;
-		text-align: justify;
-	}
-
-	.cv{
-		align-self: center;
-		border-radius: 200px;
-		background: #616161;
-	}
-
-	.cv:hover{
-		background: #000000;
-	}
-
-	.cv iron-icon{
-		width: 200px;
-		height: 200px;
-	}
-
-	@media only screen and (max-device-width : 667px) {
-		.profileImg{
-			margin: auto;
-		}
-
-		.vr{
-			min-height: 0px;
-			width: 100%;
-			margin: 20px 0 20px 0;
-		}
-	}
-
-</style>
