@@ -1,0 +1,115 @@
+/* Main container */
+.container{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #616161;
+}
+
+/* Subcontainers */
+.info{
+    display: inline-flex;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+}
+.links{
+    display: inline-flex;
+    justify-content: space-around;
+    min-width: 80%;
+}
+
+/* INFO Items */
+.profileImg{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+}
+.vr{
+    border: 1px solid #616161;
+    min-height: 250px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* DETAIL Items */
+.name{
+    font-size: 64px;
+}
+.title{
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+.detail a{
+    text-decoration: none;
+    color: #616161;
+    margin-bottom: 5px;
+}
+.detail a:hover{
+    color: black;
+}
+.githubIcon{
+    background: #616161;
+    border-radius: 50px;
+    padding: 1px;
+}
+.githubRef:hover .githubIcon{
+    background: black;
+}
+
+/* LINKS Items */
+.links a{
+    text-decoration: none;
+    text-transform: none;
+}
+
+.linkBtn{
+    display: flex;
+    width: 250px;
+    height: 250px;
+    border-radius: 150px;
+    background: #616161;
+    color: white;
+    font-size: 64px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-transform: capitalize;
+}
+
+.linkBtn iron-icon{
+    width: 200px;
+    height: 200px;
+}
+
+.linkBtn:hover{
+    background: black;
+}
+
+@media only screen and (max-device-width : 667px) {
+
+    .info{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .vr{
+        min-height: 0px;
+        width: 100%;
+        margin: 20px 0 20px 0;
+    }
+
+    .links{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linkBtn{
+        margin-bottom: 15px;
+    }
+}
