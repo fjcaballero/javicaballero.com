@@ -1,0 +1,67 @@
+<!--
+@license
+@author Javier Caballero Abenza. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="./string2html-wc.html">
+
+<dom-module id="blogger-wc">
+    <template>
+
+        <style is="custom-style">
+            :host{
+                display: flex;
+                flex-direction: column;
+            }
+
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .title{
+                font-size: 32px;
+            }
+
+            .title:hover{
+                color: black;
+            }
+
+        </style>
+
+        <template is="dom-repeat" items="{{posts.items}}">
+            <a href="{{item.url}}" target="_blank">
+                <span class="title">{{item.title}}</span>
+            </a>
+            <span>[[_parseDate(item.published)]]</span>
+            <string2html-wc
+                string="{{item.content}}"
+            >
+            </string2html-wc>
+        </template>
+
+        <iron-ajax
+            auto
+            url="https://www.googleapis.com/blogger/v3/blogs/{{blogId}}/posts?key={{authKey}}"
+            last-response="{{posts}}"
+        >
+        </iron-ajax>
+
+    </template>
+    <script>
+        Polymer({
+
+            is: 'blogger-wc',
+
+            properties:{
+            },
+
+            _parseDate: function(string){
+                var date = new Date(string);
+                return date.toLocaleDateString() + ' ' + date.toLocaleTimeString().substring(0,5);
+            },
+
+        });
+    </script>
+</dom-module>
