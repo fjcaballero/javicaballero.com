@@ -1,0 +1,44 @@
+/* Main container */
+.container{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #616161;
+}
+
+.blogContainer{
+    width: 90%;
+}
+
+.card{
+    margin-top: 10px; 
+    padding: 23px;
+    border-radius: 5px;
+    /* Shadow */
+    box-shadow: 5px 5px 20px 0px;
+    -webkit-box-shadow: 5px 5px 20px 0px;
+    -moz-box-shadow: 5px 5px 20px 0px;
+}
+
+.blogName{
+        font-size: 64px;
+}
+
+.row{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.youtube, .github{
+    width: 45%;
+}
+
+.github .card{
+    max-height: 700px;
+    overflow-y: scroll;
+}
+

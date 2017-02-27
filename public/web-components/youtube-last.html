@@ -1,0 +1,49 @@
+<!--
+@license
+@author Javier Caballero Abenza. All rights reserved.
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="youtube-last">
+    <template>
+        <style is="custom-style">
+            .videoWrapper {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                padding-top: 25px;
+                height: 0;
+            }
+            .videoWrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+        <div class="videoWrapper">
+            <iframe width="560" height="349" src="http://www.youtube.com/embed/{{videos.items.0.id.videoId}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+
+        <iron-ajax
+            auto
+            url="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={{channelId}}&order=date&key={{authKey}}"
+            last-response="{{videos}}"
+        >
+        </iron-ajax>
+
+    </template>
+    <script>
+        Polymer({
+
+            is: 'youtube-last',
+
+            properties:{
+            },
+
+        });
+    </script>
+</dom-module>
