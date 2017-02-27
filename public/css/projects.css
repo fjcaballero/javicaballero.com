@@ -10,6 +10,7 @@
 
 .blogContainer{
     width: 90%;
+    margin-top: 20px;
 }
 
 .card{
@@ -22,8 +23,8 @@
     -moz-box-shadow: 5px 5px 20px 0px;
 }
 
-.blogName{
-        font-size: 64px;
+.projectTitle{
+        font-size: 48px;
 }
 
 .row{
@@ -42,3 +43,16 @@
     overflow-y: scroll;
 }
 
+@media only screen and (max-device-width : 667px) {
+
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .youtube, .github{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
