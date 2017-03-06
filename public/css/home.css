@@ -1,13 +1,6 @@
-/* Main container */
-.container{
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    color: #616161;
+.homeContainer{
+    height: 100%;
 }
-
 /* Subcontainers */
 .info{
     display: inline-flex;
@@ -90,6 +83,10 @@
 }
 
 @media only screen and (max-device-width : 667px) {
+
+    .homeContainer{
+        height: auto;
+    }
 
     .info{
         flex-direction: column;

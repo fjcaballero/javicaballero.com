@@ -1,37 +1,10 @@
-/* Main container */
-.container{
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    color: #616161;
-}
-
 .blogContainer{
     width: 90%;
     margin-top: 20px;
 }
 
-.card{
-    margin-top: 10px; 
-    padding: 23px;
-    border-radius: 5px;
-    /* Shadow */
-    box-shadow: 5px 5px 20px 0px;
-    -webkit-box-shadow: 5px 5px 20px 0px;
-    -moz-box-shadow: 5px 5px 20px 0px;
-}
-
 .projectTitle{
         font-size: 48px;
-}
-
-.row{
-    display: inline-flex;
-    justify-content: space-between;
-    width: 90%;
-    margin-top: 30px;
 }
 
 .youtube, .github{
@@ -44,11 +17,6 @@
 }
 
 @media only screen and (max-device-width : 667px) {
-
-    .row{
-        display: flex;
-        flex-direction: column;
-    }
 
     .youtube, .github{
         width: 100%;
