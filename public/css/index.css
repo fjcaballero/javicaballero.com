@@ -7,16 +7,37 @@ html,body{
 	margin: 0;
 }
 
-body{
-	/* background-image: url("images/background.jpg");
-*/
-}
-
 .content{
 	width: 100%;
 	height: calc(100% - 64px);
 }
 
+/* Main container */
+.container{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #616161;
+}
+
+.card{
+    margin-top: 10px; 
+    padding: 23px;
+    border-radius: 5px;
+    /* Shadow */
+    box-shadow: 5px 5px 20px 0px;
+    -webkit-box-shadow: 5px 5px 20px 0px;
+    -moz-box-shadow: 5px 5px 20px 0px;
+}
+
+.row{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 30px;
+}
 
 /* Contact */
 
@@ -44,13 +65,22 @@ body{
     letter-spacing: -3px;
     text-align: center;
     margin: 20px;
-    color: #616161
+    color: #616161;
 }
 
 @media only screen and (max-device-width : 667px) {
 	.contact-container, .contact-info{
 		justify-content: inherit;
 	}
+
+	.content{
+		height: calc(100% - 56px);
+	}
+
+	.row{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Recipes */

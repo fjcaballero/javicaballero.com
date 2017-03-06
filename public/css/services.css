@@ -1,0 +1,24 @@
+.tech, .others{
+    margin-bottom: 20px;
+}
+
+.card img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.servicesRow{
+    max-width: 1483px;
+}
+
+@media only screen and (max-device-width : 667px) {
+    .container{
+        justify-content: center;
+    }
+    .servicesRow{
+        margin-top: 0;
+    }
+    .web{
+        margin: 20px;
+    }
+}
