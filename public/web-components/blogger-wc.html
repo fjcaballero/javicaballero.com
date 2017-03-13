@@ -30,21 +30,19 @@
 
         </style>
 
-        <template is="dom-repeat" items="{{posts.items}}">
-            <a href="{{item.url}}" target="_blank">
-                <span class="title">{{item.title}}</span>
-            </a>
-            <span>[[_parseDate(item.published)]]</span>
-            <string2html-wc
-                string="{{item.content}}"
-            >
-            </string2html-wc>
-        </template>
+        <a href="{{post.url}}" target="_blank">
+            <span class="title">{{post.title}}</span>
+        </a>
+        <span>[[_parseDate(post.published)]]</span>
+        <string2html-wc
+            string="{{post.content}}"
+        >
+        </string2html-wc>
 
         <iron-ajax
             auto
             url="https://www.googleapis.com/blogger/v3/blogs/{{blogId}}/posts?key={{authKey}}"
-            last-response="{{posts}}"
+            on-response="postsReceived"
         >
         </iron-ajax>
 
@@ -61,6 +59,10 @@
                 var date = new Date(string);
                 return date.toLocaleDateString() + ' ' + date.toLocaleTimeString().substring(0,5);
             },
+
+            postsReceived: function(event, detail){
+                this.post = detail.response.items[0];
+            }
 
         });
     </script>

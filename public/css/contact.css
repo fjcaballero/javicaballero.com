@@ -1,0 +1,28 @@
+.contact .row{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.contact{
+    justify-content: center;
+}
+
+.contact .title{
+	font-size: 64px;
+    word-spacing: 1px;
+    line-height: 90px;
+    font-family: "neuzeitgrobold",sans-serif;
+    text-transform: none;
+    letter-spacing: -3px;
+    text-align: center;
+    margin: 0;
+    color: #616161;
+}
+
+.contact hr{
+    margin-top: 40px;
+}
+
+@media only screen and (max-device-width : 667px) {
+
+}
