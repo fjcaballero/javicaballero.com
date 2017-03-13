@@ -13,11 +13,10 @@
 		
 		<style is="custom-style">
 			:host{
-				display: inline-flex;
-				flex-direction: column;
+				display: flex;
+				justify-content: center;
 				width: 300px;
 				padding: 10px;
-				margin: auto;
 			}
 			a{
 				display: inline-flex;
@@ -45,6 +44,15 @@
 				fill: #ffffff;
 			}
 
+			#empty{
+				background: none;
+				margin-bottom: 0px;
+			}
+
+			#empty:hover{
+				background: var(--paper-grey-400);
+			}
+
 			span{
 				display: block;
 				margin: auto;
@@ -63,7 +71,7 @@
 		</style>
 
 		<a href="{{href}}" target="{{target}}">
-			<iron-icon icon="{{icon}}" src="{{image}}"></iron-icon>
+			<iron-icon icon="{{icon}}" src="{{image}}" id="{{background}}"></iron-icon>
 			<span class="name">{{title}}</span>
 			<span>{{description}}</span>
 		</a>
