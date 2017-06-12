@@ -1,4 +1,21 @@
-.blogContainer{
+.infoGroup{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.label{
+    font-size: 19px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.value{
+    font-size: 16px;
+}
+
+.projectContainer{
     width: 90%;
     margin-top: 20px;
 }
@@ -11,6 +28,10 @@
     width: 45%;
 }
 */
+
+.github{
+    width: auto;
+}
 
 .github .card{
     max-height: 700px;
