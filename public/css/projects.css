@@ -6,10 +6,11 @@
 .projectTitle{
         font-size: 48px;
 }
-
+/*
 .youtube, .github{
     width: 45%;
 }
+*/
 
 .github .card{
     max-height: 700px;
