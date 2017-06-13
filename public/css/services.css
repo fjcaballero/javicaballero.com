@@ -1,3 +1,8 @@
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
 .tech, .others{
     margin-bottom: 20px;
 }
@@ -21,4 +26,58 @@
     .web{
         margin: 20px;
     }
+}
+
+/* WEB */
+#webContainer{
+    justify-content: flex-start;
+    margin-bottom: 60px;
+}
+
+.sweb{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sweb .title{
+    margin: 15px 0 15px 0;
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.sweb .description{
+    font-size: 19px;
+}
+
+.sweb .subtitle{
+    align-self: flex-start;
+    margin: 15px 0 15px 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.techs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.techImg{
+    width: 45%;
+    height: auto;
+}
+
+.big{
+    width: 90%;
+}
+
+.solButton{
+    margin-top: 20px;
+    font-size: 32px;
+    background-color: #00a1ff;
+    color: white;
 }
